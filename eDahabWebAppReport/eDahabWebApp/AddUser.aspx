@@ -17,11 +17,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="txtUsername">Username:</label>
-                                <asp:TextBox ID="txtUsername" runat="server" class="form-control" ></asp:TextBox>
+                                <asp:TextBox ID="txtUsername" runat="server" class="form-control" placeholder="Username"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label for="txtPassword">Password:</label>
-                                <asp:TextBox ID="txtPassword" runat="server" class="form-control" TextMode="Password" ></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" class="form-control" TextMode="Password" placeholder="Password" ></asp:TextBox>
                             </div>
                              
                             <asp:Button ID="btnAddUser" runat="server" Text="New User" class="btn btn-sm btn-success" OnClick="btnAddUser_Click"  />

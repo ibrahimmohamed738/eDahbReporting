@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace eDahabWebApp
 {
@@ -26,10 +27,20 @@ namespace eDahabWebApp
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 lblErrorMessage.Text = "Username and Password is required";
             else
-            { 
-                Register.RegisterUser(username, password, createdBy);
-                lblErrorMessage.Text = "";
-                lblSuccessMessage.Text = "User created successfully.";
+            {
+                DataTable dt = Register.CheckUsername(username);
+                int checkUsername = Convert.ToInt32(dt.Rows[0][0]);
+                if (checkUsername == -1)
+                {
+                    Register.RegisterUser(username, password, createdBy);
+                    lblErrorMessage.Text = "";
+                    lblSuccessMessage.Text = "User created successfully.";
+                }
+                else
+                { 
+                    lblErrorMessage.Text = "Username already taken.";
+                    lblSuccessMessage.Text = "";
+                }
             }
 
 
