@@ -34,7 +34,7 @@ namespace eDahabWebApp
             
                 {
                 
-                    lblErrorMessage.Text = "Invalid username or password.";
+                    lblErrorMessage.Text = "Invalid username or password";
             
                 }
             
@@ -46,7 +46,7 @@ namespace eDahabWebApp
                 
                     Session["Username"] = User;
                 
-                    Response.Redirect("Admin.aspx");
+                    Response.Redirect("Default.aspx");
             
                 }
             }
