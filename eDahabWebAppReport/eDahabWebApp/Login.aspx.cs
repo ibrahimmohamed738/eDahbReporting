@@ -25,7 +25,7 @@ namespace eDahabWebApp
                 lblErrorMessage.Text = "Username and Password is required";
             else 
             {
-                DataTable dt = login.LOGIN(txtUsername.Text, txtPassword.Text);
+                DataTable dt = login.LOGIN(username, BL.CLS_ValidPassword.hashPassword(password));
            
                 int checkLogin = Convert.ToInt32(dt.Rows[0][0]);
 
