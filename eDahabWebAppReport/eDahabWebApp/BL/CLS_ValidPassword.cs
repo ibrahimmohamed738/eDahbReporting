@@ -28,6 +28,7 @@ namespace eDahabWebApp.BL
                     if (char.IsUpper(c)) hasUpperCaseLetter = true;
                     else if (char.IsLower(c)) hasLowerCaseLetter = true;
                     else if (char.IsDigit(c)) hasDecimalDigit = true;
+                    
                 }
             }
 

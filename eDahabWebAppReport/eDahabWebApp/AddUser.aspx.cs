@@ -25,28 +25,25 @@ namespace eDahabWebApp
             var createdBy = Session["Username"].ToString();
             //Validate Password meet the requirement or not
             var checkPassword = BL.CLS_ValidPassword.ValidatePassword(password);
+            DataTable dt = Register.CheckUsername(username);
+            int checkUsername = Convert.ToInt32(dt.Rows[0][0]);
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 lblErrorMessage.Text = "Username and Password is required";
+            else if (checkUsername != -1)
+                lblErrorMessage.Text = "Username already taken.";
             else if (checkPassword == false)
-                lblErrorMessage.Text = "Password should Contain Capital latter" +
-                    "One digit";
+                lblErrorMessage.Text = "1- Password Length should be between 8 & 15. <br />" +
+                    "2- Should have one upper case & one Lower case letter. <br />" +
+                    "3- Should have one Digit.";
 
             else
             {
-                DataTable dt = Register.CheckUsername(username);
-                int checkUsername = Convert.ToInt32(dt.Rows[0][0]);
-                if (checkUsername == -1)
-                {
+               
                     Register.RegisterUser(username, BL.CLS_ValidPassword.hashPassword(password), createdBy);
                     lblErrorMessage.Text = "";
                     lblSuccessMessage.Text = "User created successfully.";
-                }
-                else
-                {
-                    lblErrorMessage.Text = "Username already taken.";
-                    lblSuccessMessage.Text = "";
-                }
+              
             }
 
 
