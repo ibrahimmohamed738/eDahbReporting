@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Configuration;
 
 namespace eDahabWebApp.DAL
 {
@@ -13,7 +13,7 @@ namespace eDahabWebApp.DAL
         SqlConnection sqlconnection;
         public DataAccessLayer()
         {
-            sqlconnection = new SqlConnection(@"Server=.\SQLEXPRESS;Database=eDahabReportingDB;User=sa;Pwd=0328655@joker");
+            sqlconnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ReportDB"].ConnectionString);
         }
 
         public void Open()
