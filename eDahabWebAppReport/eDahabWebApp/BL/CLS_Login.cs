@@ -27,5 +27,20 @@ namespace eDahabWebApp.BL
 
             return dt;
         }
+
+        public DataTable GetUserDatail(string Username)
+        {
+            DAL.DataAccessLayer DAL = new DAL.DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+
+            param[0] = new SqlParameter("@Username", SqlDbType.NVarChar, 100);
+            param[0].Value = Username;
+
+            DataTable dt = new DataTable();
+            dt = DAL.SelectData("SP_GetUserDetail", param);
+            DAL.Close();
+
+            return dt;
+        }
     }
 }
