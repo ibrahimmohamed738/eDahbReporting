@@ -60,7 +60,7 @@
                             <i class="fa fa-user fa-fw"></i> <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label> <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            <li><a href="UserProfile.aspx"><i class="fa fa-user fa-fw"></i> User Profile</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="Logout.aspx"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
