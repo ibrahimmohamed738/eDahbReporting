@@ -11,9 +11,11 @@
                    
                                 
                         <div class="col-lg-6">
-                              <div>
-                                <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" ></asp:Label>
-				                <asp:Label ID="lblSuccessMessage" runat="server" Text="" ForeColor="Green"></asp:Label>
+                              <div class="alert alert-danger" runat="server" id="ErrorMsg">
+                                <asp:Label ID="lblErrorMessage" runat="server" Text=""></asp:Label>
+                              </div>
+                            <div class="alert alert-success" runat="server" id="SuccessMsg">
+				                <asp:Label ID="lblSuccessMessage" runat="server" Text=""></asp:Label>
                             </div>
                             <div class="form-group">
                                 <label for="txtUsername">Username:</label>
@@ -21,11 +23,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="txtPassword">Password:</label>
-                                <asp:TextBox ID="txtPassword" runat="server" class="form-control" TextMode="Password" ></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
                             </div>
                              
                             <asp:Button ID="btnEditUser" runat="server" Text="Edit User" class="btn btn-sm btn-success" OnClick="btnEditUser_Click" />
-                          </div>
+                         </div>
                   
                 </div>
                 <!-- /.container-fluid -->

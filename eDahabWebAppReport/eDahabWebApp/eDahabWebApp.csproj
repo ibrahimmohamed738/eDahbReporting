@@ -140,6 +140,7 @@
     <Compile Include="BL\CLS_AddUser.cs" />
     <Compile Include="BL\CLS_Login.cs" />
     <Compile Include="BL\CLS_ValidPassword.cs" />
+    <Compile Include="BL\CLS_UpdateUser.cs" />
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
